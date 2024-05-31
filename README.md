@@ -6,7 +6,7 @@
 - Use Identity-Aware Proxy to secure the website and manage users via Google IAM
 
 ## Step 1: deploy Quarto on app engine
-The `app.yaml` in the root is all you need to deploy a static site on App Engine ([docs](https://cloud.google.com/appengine/docs/standard/hosting-a-static-website#creating_the_appyaml_file). Assuming you have already installed the Google Cloud CLI just run
+The `app.yaml` in the root is all you need to deploy a static site on App Engine ([docs](https://cloud.google.com/appengine/docs/standard/hosting-a-static-website#creating_the_appyaml_file)). Assuming you have already installed the Google Cloud CLI, just run
 
 ```gloud app deploy```
 
