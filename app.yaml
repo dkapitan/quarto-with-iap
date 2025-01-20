@@ -1,10 +1,21 @@
 runtime: python311
+env: standard
+instance_class: F1  # Use smallest instance class for cost efficiency
 
+# Routing of Quarto website
 handlers:
 - url: /
   static_files: _site/index.html
   upload: _site/index.html
-
 - url: /(.*)
   static_files: _site/\1
-  upload: _site/(.*)
+  upload: _site/(.*) 
+
+env_variables:
+  SCALE_TO_ZERO: 'true'
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: automatic
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+  max_instances: 1
