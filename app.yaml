@@ -4,6 +4,9 @@ instance_class: F1  # Use smallest instance class for cost efficiency
 
 # Routing of Quarto website
 handlers:
+- url: /(.*)/
+  static_files: _site/\1/index.html
+  upload: _site/.*/index\.html
 - url: /
   static_files: _site/index.html
   upload: _site/index.html
