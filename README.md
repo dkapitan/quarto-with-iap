@@ -19,7 +19,13 @@ from the project's root folder.
 
 ## Step 2: enable the Identity-Aware proxy
 
-Follow the steps from [the documentation](https://cloud.google.com/iap/docs/enabling-app-engine). Using Google IAM, you can add any user that has a Google account. Note that you can [use an existing email address to create a Google account](https://support.google.com/accounts/answer/27441?hl=en#existingemail).
+Follow the steps from [the documentation](https://cloud.google.com/iap/docs/enabling-app-engine). Using Google IAM, you can add any user that has a Google account. Note that you can [use an existing email address to create a Google account](https://support.google.com/accounts/answer/27441?hl=en#existingemail). By default, the app is only accessible to internal users (of the organization).
 
+### Easy way to make app accessible to external users
 
-... and that's it!
+If you want to use Google's OAuth workflow (and hence save yourself the time of building your own), you can either go through a lenghty approval process, or you can:
+
+- Choose to go in testing mode, which allows you up to 100 users
+- Make sure to add the external users (as test users) on the project's [OAuth consent screen](https://console.cloud.google.com/apis/credentials/consent)
+- Add the IAP-secured Web App user role to the user in the [Identity-Aware Proxy applications tab](https://console.cloud.google.com/security/iap?tab=applications)
+
